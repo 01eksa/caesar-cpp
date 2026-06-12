@@ -27,12 +27,12 @@ inline bench_result run_benchmark(const std::string& data, const bench_settings&
         throw std::runtime_error("benchmark is corrupted!");
     }
 
-    const auto start = std::chrono::high_resolution_clock::now();
+    const auto start = std::chrono::steady_clock::now();
     for (unsigned i = 0; i < settings.repeat; i++) {
         caesar::encode(in_process, settings.offset);
         caesar::decode(in_process, settings.offset);
     }
-    const auto end = std::chrono::high_resolution_clock::now();
+    const auto end = std::chrono::steady_clock::now();
 
     if (in_process != data) {
         throw std::runtime_error("benchmark is corrupted!");
