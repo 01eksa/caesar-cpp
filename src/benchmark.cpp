@@ -1,21 +1,7 @@
-#pragma once
-
-#include <chrono>
-
+#include "benchmark.h"
 #include "caesar.h"
 
-struct bench_settings {
-    unsigned warmup = 10;
-    unsigned repeat = 100;
-    unsigned offset = 3;
-};
-
-struct bench_result {
-    double total_time;
-    double average_time;
-};
-
-inline bench_result run_benchmark(const std::string& data, const bench_settings& settings) {
+bench_result run_benchmark(const std::string& data, const bench_settings& settings) {
     std::string in_process = data;
 
     for (unsigned i = 0; i < settings.warmup; i++) {
@@ -40,8 +26,11 @@ inline bench_result run_benchmark(const std::string& data, const bench_settings&
 
     bench_result result{};
     result.total_time =
-        static_cast<double>(std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()) / 1000;
-    result.average_time  = result.total_time / settings.repeat;
+        static_cast<double>(
+            std::chrono::duration_cast<std::chrono::microseconds>(end - start).count()
+        )
+        / 1000;
+    result.average_time = result.total_time / settings.repeat;
 
     return result;
 }

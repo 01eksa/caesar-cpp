@@ -5,7 +5,7 @@ IndentWidth: 4
 TabWidth: 4
 UseTab: Never
 AccessModifierOffset: -2
-ColumnLimit: 120
+ColumnLimit: 100
 InsertNewlineAtEOF: true
 NamespaceIndentation: All
 WrapNamespaceBodyWithEmptyLines: Always
@@ -34,3 +34,4 @@ BinPackArguments: false
 AlignAfterOpenBracket: true
 BreakAfterOpenBracketFunction: true
 BreakBeforeCloseBracketFunction: true
+BreakBeforeBinaryOperators: NonAssignment
