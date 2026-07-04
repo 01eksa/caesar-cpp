@@ -50,6 +50,7 @@ caesar-cpp.exe [OPTIONS] file_path      # Windows
 * `-w, --warmup UINT [10]` — Warm-up cycles (to populate CPU cache before measurements).
 * `-r, --repeat UINT [100]` — Benchmark execution cycles.
 * `-o, --offset UINT [3]` — Offset value (key) for the Caesar cipher.
+* `-l, --logo ` — Shows logo
 
 ## Test Data (Recommended)
 
