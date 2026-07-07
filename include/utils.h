@@ -6,9 +6,9 @@
 #if defined(__x86_64__) || defined(_M_X64) || defined(__i386__) || defined(_M_IX86)
     #define ARCH_X86
     #include "cpuinfo_x86.h"
-#elif defined(__arm__) || defined(__aarch64__) || defined(_M_ARM) || defined(_M_ARM64)
-    #define ARCH_ARM
-    #include "cpuinfo_arm.h"
+#elif defined(__aarch64__) || defined(_M_ARM64)
+    #define ARCH_ARM64
+    #include "cpuinfo_aarch64.h"
 #endif
 
 std::string get_processor() {
